@@ -1,3 +1,5 @@
+package generic;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -25,11 +27,11 @@ public class ExemploJavaGenerics {
         System.out.println(primeiroLong);
     }
 
-//    public static void imprimir(List<Object> list) {
-//        for (String st : list) {
-//            System.out.println(st);
-//        }
-//    }
+    public static void imprimir2(List<?> list) {
+        for (Object st : list) {
+            System.out.println(st);
+        }
+    }
 
     public static <T> void imprimir(List<T> lista) {
         for (T st : lista) {
@@ -37,7 +39,7 @@ public class ExemploJavaGenerics {
         }
     }
 
-    public static <T> T pegarPrimeiroLista(List <T> lista) {
+    public static <T> T pegarPrimeiroLista(List<T> lista) {
         return lista.get(0);
     }
 }
