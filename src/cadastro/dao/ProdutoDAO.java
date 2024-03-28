@@ -1,37 +1,38 @@
 package cadastro.dao;
 
+import cadastro.SingletonMap;
+import cadastro.dao.generic.GenericDAO;
+import cadastro.domain.Cliente;
 import cadastro.domain.Produto;
 
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * @author guiol
+ * @author rodrigo.pires
  */
-public class ProdutoDAO implements IProdutoDAO{
+public class ProdutoDAO extends GenericDAO<Produto> implements IProdutoDAO {
+
+    public ProdutoDAO() {
+        super();
+        Map<Long, Produto> mapaInterno =
+                (Map<Long, Produto>) SingletonMap.getInstance().getMap().get(getTipoClasse());
+        if (mapaInterno == null) {
+            mapaInterno = new HashMap<>();
+            SingletonMap.getInstance().getMap().put(getTipoClasse(), mapaInterno);
+        }
+    }
 
 
     @Override
-    public Boolean cadastrar(Produto produto) {
-        return null;
+    public Class<Produto> getTipoClasse() {
+        return Produto.class;
     }
 
     @Override
-    public void excluir(Long codigo) {
-
-    }
-
-    @Override
-    public void alterar(Produto produto) {
-
-    }
-
-    @Override
-    public Produto consultar(Long cpf) {
-        return null;
-    }
-
-    @Override
-    public Collection<Produto> buscarTodos() {
-        return null;
+    public void atualiarDados(Produto entity, Produto entityCadastrado) {
+        entityCadastrado.setNome(entity.getNome());
+        entityCadastrado.setCodigo(entity.getCodigo());
     }
 }

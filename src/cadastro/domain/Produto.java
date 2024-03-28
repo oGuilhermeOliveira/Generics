@@ -1,27 +1,37 @@
 package cadastro.domain;
 
 /**
- * @author guiol
+ * @author rodrigo.pires
+ *
+ * Classe que representa os dados de produto
  */
 public class Produto implements Persistente{
 
-    private Long String;
+    private Long codigo;
 
-    private String codigo;
+    private String nome;
 
-    public Long getString() {
-        return String;
-    }
-
-    public void setString(Long string) {
-        String = string;
-    }
-
-    public java.lang.String getCodigo() {
+    public Long getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(java.lang.String codigo) {
+    public void setCodigo(Long codigo) {
         this.codigo = codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "codigo=" + codigo +
+                ", nome='" + nome + '\'' +
+                '}';
     }
 }

@@ -1,17 +1,24 @@
-//package generic;
-//
-///**
-// * @author guiol
-// */
-//public class GenericEntry <T> {
-//
-//    private T data;
-//
-//    public GenericEntry(T data) {
-//        this.data = data;
-//    }
-//
-//    public T getData() {
-//        return this.data;
-//    }
-//}
+package generic;
+
+/**
+ * @author rodrigo.pires
+ */
+public class GenericEntry<T, E> {
+
+    private T data;
+
+    private E codigo;
+
+    public GenericEntry(T data, E codigo) {
+        this.data = data;
+        this.codigo = codigo;
+    }
+
+    public T getData() {
+        return this.data;
+    }
+
+    public E getCodigo() {
+        return this.codigo;
+    }
+}

@@ -1,9 +1,9 @@
 package cadastro;
 
-import cadastro.dao.IClienteDAO;
-import cadastro.dao.ClienteMapDAO;
-import cadastro.domain.Cliente;
 
+import cadastro.dao.ClienteMapDAO;
+import cadastro.dao.IClienteDAO;
+import cadastro.domain.Cliente;
 
 import javax.swing.*;
 
@@ -14,7 +14,7 @@ public class App {
 
     private static IClienteDAO iClienteDAO;
 
-    public static void main(String[] args) {
+    public static void main(String args[]) {
         iClienteDAO = new ClienteMapDAO();
 
         String opcao = JOptionPane.showInputDialog(null,
